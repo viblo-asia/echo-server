@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "viblo-echo-server",
+      "script": "index.js",
+      "env": {
+        "production": true
+      }
+    }
+  ]
+}
