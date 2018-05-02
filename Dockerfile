@@ -5,13 +5,13 @@ ENV PORT=6001
 
 COPY index.js /srv/index.js
 COPY package.json /srv/package.json
-COPY package-lock.json /srv/package-lock.json
+COPY yarn.lock /srv/yarn.lock
 COPY src /srv/src
 
 WORKDIR /srv
 
-RUN npm install
-RUN npm cache clean --force
+RUN yarn
+RUN yarn cache clean
 
 EXPOSE 6001
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start"]
