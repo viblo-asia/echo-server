@@ -9,6 +9,11 @@ const {
 } = envalid
 
 module.exports = cleanEnv(process.env, {
+    NODE_ENV: str({
+        default: 'production',
+        desc: 'Node environment name',
+    }),
+
     HOST: host({
         default: '0.0.0.0',
         desc: 'Application host',
@@ -21,9 +26,9 @@ module.exports = cleanEnv(process.env, {
         default: 'viblo-websocket',
         desc: 'Application service name',
     }),
-    REDIS_HOST: host({
+    REDIS_HOST: str({
         default: '127.0.0.1',
-        desc: 'Redis host',
+        desc: 'Redis host: IP, Domain, Docker container hostname',
     }),
     REDIS_PORT: port({
         default: 6379,
